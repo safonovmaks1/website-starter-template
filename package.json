@@ -1,0 +1,40 @@
+{
+	"name": "website-starter-template",
+	"version": "1.0.0",
+	"author": "Maks Safonov <safonovmaks1@yandex.ru> (http://safonov.website/)",
+	"description": "Starter Website Template Gulp Webpack Babel Scss",
+	"license": "WTFPL",
+	"main": "gulpfile.babel.js",
+	"keywords": [
+		"Gulp",
+		"Webpack",
+		"Babel",
+		"Scss"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/safonovmaks1/website-starter-template.git"
+	},
+	"bugs": {
+		"url": "https://github.com/safonovmaks1/website-starter-template/issues"
+	},
+	"homepage": "https://github.com/safonovmaks1/website-starter-template#readme",
+	"browserslist": [
+		"> 0.1%",
+		"last 2 versions",
+		"not dead"
+	],
+	"type": "module",
+	"scripts": {
+		"start": "gulp",
+		"build": "gulp --production",
+		"clean": "gulp reset",
+		"zip": "gulp deployZip --production",
+		"deploy": "gulp deployFtp --production",
+		"del": "rm -rf node_modules build"
+	},
+	"devDependencies": {
+		"@babel/register": "^7.18.9",
+		"gulp": "^4.0.2"
+	}
+}
