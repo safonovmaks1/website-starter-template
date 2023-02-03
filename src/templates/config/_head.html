@@ -1,0 +1,38 @@
+<head>
+	<!-- Global Metas -->
+	<meta charset="UTF-8" />
+
+	<!-- Mobile Specific Metas -->
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1.0, user-scalable=0"
+	/>
+
+	<!-- Title -->
+	<title>@@title</title>
+
+	<!-- Meta -->
+	@@include("./meta.html", { "Author": "", "Copyright": "", "Address": "",
+	"description": "", "keywords": "" })
+
+	<!-- Отключает формирование ссылки у номера телефона и адреса на iOS -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="address=no" />
+
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta
+		name="apple-mobile-web-app-status-bar-style"
+		content="black-transcluent"
+	/>
+
+	<!-- Favicons -->
+	@@include("./favicon.html")
+
+	<!-- Fonts -->
+	@@include("./font-preload.html")
+
+	<!-- Custom CSS, JavaScript for this template -->
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/script.js" defer></script>
+</head>

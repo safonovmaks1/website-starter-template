@@ -13,7 +13,11 @@ const projectFolder = 'build';
 export default {
 	root: projectFolder,
 
-	html: {},
+	html: {
+		src: `${sourceFolder}/*.html`,
+		watch: `${sourceFolder}/**/*.html`,
+		dest: projectFolder,
+	},
 	pug: {},
 	scss: {},
 	js: {},

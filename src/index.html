@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<link rel="stylesheet" href="css/style.css" />
-		<script src="js/app.js" r></script>
-	</head>
+	@@include("./templates/config/_head.html", { "title":"Главная"})
 	<body>
-		<header class="header" id="header"></header>
+		<header class="header" id="header">
+			@@include("./templates/layout/header/_header.html")
+		</header>
 		<!-- /#header.header -->
 
 		<main class="main">
 			<div class="container">
-				<h1>test</h1>
+				<h1>Главная</h1>
 			</div>
 		</main>
 		<!-- /.main -->
 
-		<footer class="footer"></footer>
+		<footer class="footer">
+			@@include("./templates/layout/footer/_footer.html")
+		</footer>
 		<!-- /.footer -->
 	</body>
 </html>
