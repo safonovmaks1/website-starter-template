@@ -24,22 +24,22 @@ export const scss = () => {
 			.src(path.scss.src, { sourcemaps: app.isDev })
 			.pipe(
 				plugins.plumber({
-					errorHandler: plugins.notify.onError((error) => ({
+					errorHandler: plugins.notify.onError(error => ({
 						title: 'Scss',
 						message: error.message,
 					})),
-				})
+				}),
 			)
 			.pipe(sass({ includePaths: ['node_modules'] }))
+			.pipe(autoprefixer(app.autoprefixer))
 			.pipe(shorthand())
 			.pipe(groupCssMediaQueries())
 			.pipe(
 				webpCss({
 					webpClass: '.webp',
 					noWebpClass: '.no-webp',
-				})
+				}),
 			)
-			.pipe(autoprefixer(app.autoprefixer))
 			// Раскомментировать если нужен не сжатый дубль файла стилей
 			// .pipe(gulp.dest(path.scss.dest, { sourcemaps: app.isDev }))
 			.pipe(plugins.gulpif(app.isProd, cleanCSS(app.cleancss)))

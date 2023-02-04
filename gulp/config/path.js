@@ -8,10 +8,11 @@ const rootFolder = nodePath.basename(nodePath.resolve());
 const sourceFolder = 'src';
 const projectFolder = 'build';
 // const projectFolder = rootFolder;
-// const projectFolder = '/Applications/MAMP/htdocs/test';
+// const projectFolder = `/Applications/MAMP/htdocs/${rootFolder}`;
 
 export default {
 	root: projectFolder,
+	rootFolder: rootFolder,
 
 	html: {
 		src: `${sourceFolder}/*.html`,
@@ -29,7 +30,11 @@ export default {
 		watch: `${sourceFolder}/js/**/*.js`,
 		dest: `${projectFolder}/js`,
 	},
-	fonts: {},
+	fonts: {
+		src: `${sourceFolder}/assets/fonts/**/*.ttf`,
+		dest: `${projectFolder}/fonts`,
+		scss: `${sourceFolder}/scss/fonts/_fonts.scss`,
+	},
 	icons: {},
 	images: {},
 	favicon: {},

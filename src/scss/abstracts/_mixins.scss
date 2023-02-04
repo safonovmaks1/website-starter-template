@@ -1,0 +1,178 @@
+// This file contains all application-wide Sass mixins.
+
+@use 'sass:map';
+@use 'breakpoints' as *;
+
+@mixin mq($key) {
+	$size: map.get($breakpoints, $key);
+
+	// mobile first
+	@media screen and (min-width: $size) {
+		@content;
+	}
+
+	// desktop first
+	// @media screen and (max-width: $size) {
+	// 	@content;
+	// }
+}
+
+// Fonts
+@mixin font-face($font-name, $file-name, $weight) {
+	@font-face {
+		font-weight: #{$weight};
+		font-family: $font-name;
+		font-style: normal;
+		src: url('../fonts/#{$file-name}.woff2') format('woff2');
+
+		// url('../fonts/#{$file-name}.woff') format('woff');
+		font-display: swap;
+	}
+}
+
+// Adaptive font
+$max-width: 1140;
+
+@mixin adaptiv-font($pc-size, $mob-size) {
+	$add-size: $pc-size - $mob-size;
+	$max-width: $max-width - 320;
+
+	font-size: calc(#{$mob-size + px} + #{$add-size} * ((100vw - 320px) / #{$max-width}));
+}
+
+// Center block
+@mixin abs-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin grid-center {
+	display: grid;
+	place-items: center;
+}
+
+// Size
+@mixin sizes($a, $b: $a) {
+	width: $a;
+	height: $b;
+}
+
+// Typography
+@mixin before-circle {
+	&::before {
+		position: absolute;
+		top: -24%;
+
+		// left: 0;
+		z-index: -1;
+
+		width: 36px;
+		height: 36px;
+		margin-left: -10px;
+
+		background: $color-primary;
+		border-radius: 100%;
+
+		content: '';
+	}
+}
+
+@mixin title-divider($img-src) {
+	&::after {
+		display: block;
+		height: 6px;
+		margin-top: 10px;
+
+		background: url($img-src) 50% 50% no-repeat;
+
+		content: '';
+	}
+}
+
+@mixin letter-spacing-fix($spacing) {
+	margin-right: -$spacing;
+
+	letter-spacing: $spacing;
+}
+
+@mixin heading-shadow($heading-shadow-size) {
+	text-shadow: 0 $heading-shadow-size 0 rgb(0 0 0 / 7%);
+}
+
+// Background
+@mixin cover-bg($img-src) {
+	background: url($img-src) center (center/cover) no-repeat;
+}
+
+@mixin bg($color-bg) {
+	position: relative;
+	z-index: 1;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+
+		display: block;
+		width: 100%;
+		height: 100%;
+
+		background: $color-bg;
+
+		content: '';
+	}
+}
+
+// Reset
+@mixin btn-reset {
+	margin: 0;
+	padding: 0;
+
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+	outline: 0;
+	cursor: pointer;
+
+	appearance: none;
+}
+
+@mixin list-reset {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+// Buttons
+@mixin btn-anim($scaleMax: 1.01, $scaleMin: 0.95) {
+	transform-origin: 50% 50% 0;
+
+	transition: all ease-out 240ms;
+
+	&:hover {
+		transform: scale(#{$scaleMax});
+	}
+
+	&:focus {
+		outline: transparent;
+	}
+
+	&:focus-visible {
+		transform: scale(#{$scaleMax}) translateY(-5%);
+	}
+
+	&:active {
+		transform: scale(#{$scaleMin});
+	}
+}

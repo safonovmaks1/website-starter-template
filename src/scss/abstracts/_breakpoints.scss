@@ -1,0 +1,9 @@
+// breakpoints
+// 480px - 30em, 576px - 36em, 768px - 48em, 992px - 62em, 1200px - 75em, 1400px - 87.5em
+// x-small - xs, small - sm, medium - md, large - lg, extra large - xl, extra extra large - xxl
+
+$breakpoints: (
+	small: 30em,
+	medium: 45em,
+	large: 65em,
+);

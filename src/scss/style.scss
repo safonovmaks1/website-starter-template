@@ -1,8 +1,27 @@
+@use 'fonts';
+@use 'abstracts/mixins' as *;
+@use 'abstracts/variables' as *;
+
 body {
 	color: papayawhip;
 	font-weight: 400;
 	font-size: 16px;
+	font-family: 'Poppins', system-ui, sans-serif;
 	line-height: 1.2;
 
-	background-color: darkslategray;
+	background-color: $body-color;
+
+	@include mq(small) {
+		background-color: khaki;
+	}
+
+	@include mq(medium) {
+		background-color: skyblue;
+	}
+
+	@include mq(large) {
+		color: dimgray;
+
+		background-color: violet;
+	}
 }

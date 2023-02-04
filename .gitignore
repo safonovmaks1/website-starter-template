@@ -3,7 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,macos,windows,visualstudiocode
 
 # Project setup
-gulp/config/ftp.js
+gulp/tasks/ftp.js
 build/
 package-lock.json
 

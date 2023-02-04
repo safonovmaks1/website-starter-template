@@ -1,0 +1,24 @@
+{
+	"usesvg": {
+		"scope": "html",
+		"prefix": "g-use",
+		"body": [
+			"<svg class=\"icon $2\">",
+			"<use xlink:href=\"images/sprite.svg#$1\"></use>",
+			"</svg>"
+		],
+		"description": "Snippet for SVG sprite"
+	},
+
+	"Snippet for section layout": {
+		"scope": "html",
+		"prefix": "g-sec",
+		"body": [
+			"<section class=\"section $1\" id=\"$2\">",
+			"<div class=\"container\">$3</div>",
+			"<!-- /.container -->",
+			"</section>"
+		],
+		"description": "Snippet for section layout"
+	}
+}

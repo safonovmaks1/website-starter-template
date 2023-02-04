@@ -1,0 +1,14 @@
+{
+	"abstracts snippet": {
+		"scope": "scss",
+		"prefix": "abs",
+		"body": ["@use 'abstracts/$1' as *;"],
+		"description": "abstracts snippet"
+	},
+
+	"media query": {
+		"prefix": "mq",
+		"body": ["@include mq($1) {$2}"],
+		"description": "media query"
+	}
+}
