@@ -76,6 +76,8 @@
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
-		"@babel/polyfill": "^7.12.1"
+		"@babel/polyfill": "^7.12.1",
+		"scrollreveal": "^4.0.9",
+		"swiper": "^9.0.2"
 	}
 }
