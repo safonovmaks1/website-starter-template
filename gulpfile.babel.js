@@ -10,6 +10,8 @@ import plugins from './gulp/config/plugins.js';
 // Tasks
 import { reset } from './gulp/tasks/reset.js';
 import { html } from './gulp/tasks/html.js';
+import { scss } from './gulp/tasks/scss.js';
+import { js } from './gulp/tasks/js.js';
 
 // Public Tasks
 export { reset };
@@ -20,7 +22,6 @@ const server = () => {
 		server: path.root,
 		logPrefix: 'DevServer',
 		browser: 'google chrome',
-		// browser: 'chrome',
 		port: 3002,
 		notify: true,
 		online: true,
@@ -32,9 +33,11 @@ const server = () => {
 // Watching files
 const watcher = () => {
 	gulp.watch(path.html.watch, html);
+	gulp.watch(path.scss.watch, scss);
+	gulp.watch(path.js.watch, js);
 };
 
-const tasks = gulp.parallel(html);
+const tasks = gulp.parallel(html, scss, js);
 
 const build = gulp.series(reset, tasks);
 

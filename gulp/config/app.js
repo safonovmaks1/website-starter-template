@@ -19,4 +19,21 @@ export default {
 		removeScriptTypeAttributes: isProd,
 		removeStyleLinkTypeAttributes: isProd,
 	},
+
+	autoprefixer: {
+		grid: true,
+		cascade: true,
+	},
+
+	cleancss: {
+		level: 2,
+	},
+
+	webpack: {
+		mode: isProd ? 'production' : 'development',
+		devtool: false,
+		output: {
+			filename: 'app.js',
+		},
+	},
 };

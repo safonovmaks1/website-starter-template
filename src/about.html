@@ -2,17 +2,23 @@
 <html lang="ru">
 	@@include("./templates/config/_head.html", { "title":"Обо мне"})
 	<body>
-		<header class="header" id="header"></header>
+		<header class="header" id="header">
+			@@include("./templates/layout/header/_header.html")
+		</header>
 		<!-- /#header.header -->
 
 		<main class="main">
 			<div class="container">
 				<h1>About</h1>
+				<br />
+				<a href="index.html">Index</a>
 			</div>
 		</main>
 		<!-- /.main -->
 
-		<footer class="footer"></footer>
+		<footer class="footer">
+			@@include("./templates/layout/footer/_footer.html")
+		</footer>
 		<!-- /.footer -->
 	</body>
 </html>

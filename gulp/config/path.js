@@ -19,8 +19,16 @@ export default {
 		dest: projectFolder,
 	},
 	pug: {},
-	scss: {},
-	js: {},
+	scss: {
+		src: `${sourceFolder}/scss/*.scss`,
+		watch: `${sourceFolder}/scss/**/*.scss`,
+		dest: `${projectFolder}/css`,
+	},
+	js: {
+		src: `${sourceFolder}/js/*.js`,
+		watch: `${sourceFolder}/js/**/*.js`,
+		dest: `${projectFolder}/js`,
+	},
 	fonts: {},
 	icons: {},
 	images: {},
