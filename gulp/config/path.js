@@ -35,8 +35,12 @@ export default {
 		dest: `${projectFolder}/fonts`,
 		scss: `${sourceFolder}/scss/fonts/_fonts.scss`,
 	},
+	images: {
+		src: `${sourceFolder}/assets/images/**/*.{png,jpg,jpeg,gif,svg}`,
+		watch: `${sourceFolder}/assets/images/**/*.{png,jpg,jpeg,gif,svg}`,
+		dest: `${projectFolder}/images/`,
+	},
 	icons: {},
-	images: {},
 	favicon: {},
 	files: {},
 };

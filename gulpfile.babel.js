@@ -12,6 +12,7 @@ import { reset } from './gulp/tasks/reset.js';
 import { html } from './gulp/tasks/html.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
+import { images } from './gulp/tasks/images.js';
 import { fonts, fontsStyle } from './gulp/tasks/fonts.js';
 import { zip } from './gulp/tasks/zip.js';
 import { ftp } from './gulp/tasks/ftp.js';
@@ -38,10 +39,11 @@ const watcher = () => {
 	gulp.watch(path.html.watch, html);
 	gulp.watch(path.scss.watch, scss);
 	gulp.watch(path.js.watch, js);
+	gulp.watch(path.images.watch, images);
 	gulp.watch(path.fonts.src, gulp.series(fonts, fontsStyle));
 };
 
-const tasks = gulp.parallel(fonts, html, scss, js);
+const tasks = gulp.parallel(fonts, html, scss, js, images);
 
 const deployZip = gulp.series(reset, tasks, zip);
 export { deployZip };

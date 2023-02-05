@@ -9,6 +9,7 @@ import plugins from '../config/plugins.js';
 import gulp from 'gulp';
 import fileinclude from 'gulp-file-include';
 import htmlmin from 'gulp-htmlmin';
+import webpHtml from 'gulp-webp-html';
 
 // Html Task
 export const html = () => {
@@ -16,23 +17,18 @@ export const html = () => {
 		.src(path.html.src, {})
 		.pipe(
 			plugins.plumber({
-				errorHandler: plugins.notify.onError((error) => ({
+				errorHandler: plugins.notify.onError(error => ({
 					title: 'Html',
 					message: error.message,
 				})),
-			})
+			}),
 		)
 		.pipe(plugins.newer(path.html.dest))
 		.pipe(fileinclude(app.fileinclude))
+		.pipe(webpHtml())
 		.pipe(plugins.gulpif(app.isProd, plugins.replace('.css', '.min.css')))
 		.pipe(plugins.gulpif(app.isProd, plugins.replace('.js', '.min.js')))
 		.pipe(htmlmin(app.htmlmin))
-		.pipe(
-			plugins.size({
-				title: 'Html',
-				pretty: 'true',
-			})
-		)
 		.pipe(gulp.dest(path.html.dest, {}))
 		.pipe(plugins.browserSync.stream());
 };

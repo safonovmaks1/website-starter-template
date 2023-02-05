@@ -36,4 +36,20 @@ export default {
 			filename: 'app.js',
 		},
 	},
+
+	imagemin: {
+		progressive: true,
+		svgoPlugins: [
+			{
+				removeViewBox: false,
+			},
+		],
+		interlaced: true,
+		optimizationLevel: 3,
+		verbose: true,
+	},
+
+	webp: {
+		quality: isDev ? 100 : 60,
+	},
 };
