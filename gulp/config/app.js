@@ -20,6 +20,11 @@ export default {
 		removeStyleLinkTypeAttributes: isProd,
 	},
 
+	pug: {
+		pretty: isDev,
+		data: {},
+	},
+
 	autoprefixer: {
 		grid: true,
 		cascade: true,
@@ -51,5 +56,40 @@ export default {
 
 	webp: {
 		quality: isDev ? 100 : 60,
+	},
+
+	favicons: {
+		icons: {
+			favicons: true,
+			appleIcon: true,
+			android: true,
+			windows: false,
+			yandex: false,
+			coast: false,
+			firefox: false,
+			appleStartup: false,
+		},
+		path: 'images/favicons/',
+		lang: 'ru-RU',
+	},
+
+	svgo: {
+		plugins: [
+			{
+				removeAttrs: {
+					attrs: '(fill.*|stroke.*|style|width|height|data.*)',
+				},
+			},
+		],
+	},
+
+	svgsprite: {
+		mode: {
+			stack: {
+				sprite: '../sprite.svg',
+				// Создавать страницу c перечнем иконок
+				// example: true
+			},
+		},
 	},
 };

@@ -25,3 +25,7 @@ body {
 		background-color: violet;
 	}
 }
+
+.icon {
+	@include size(2rem);
+}

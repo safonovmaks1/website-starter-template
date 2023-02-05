@@ -61,7 +61,7 @@ $max-width: 1140;
 }
 
 // Size
-@mixin sizes($a, $b: $a) {
+@mixin size($a, $b: $a) {
 	width: $a;
 	height: $b;
 }

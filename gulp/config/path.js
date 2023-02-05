@@ -19,7 +19,11 @@ export default {
 		watch: `${sourceFolder}/**/*.html`,
 		dest: projectFolder,
 	},
-	pug: {},
+	pug: {
+		src: `${sourceFolder}/*.pug`,
+		watch: `${sourceFolder}/**/*.pug`,
+		dest: projectFolder,
+	},
 	scss: {
 		src: `${sourceFolder}/scss/*.scss`,
 		watch: `${sourceFolder}/scss/**/*.scss`,
@@ -40,7 +44,18 @@ export default {
 		watch: `${sourceFolder}/assets/images/**/*.{png,jpg,jpeg,gif,svg}`,
 		dest: `${projectFolder}/images/`,
 	},
-	icons: {},
-	favicon: {},
-	files: {},
+	icons: {
+		src: `${sourceFolder}/assets/icons/**/*.svg`,
+	},
+	favicon: {
+		src: `${sourceFolder}/assets/favicons/favicon.svg`,
+		dest: `${projectFolder}/images/favicons`,
+	},
+	files: {
+		src: `${sourceFolder}/assets/files/**/*.*`,
+		dest: `${projectFolder}/files/`,
+	},
+	seo: {
+		dest: projectFolder,
+	},
 };

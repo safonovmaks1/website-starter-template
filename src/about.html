@@ -2,9 +2,7 @@
 <html lang="ru">
 	@@include("./templates/config/_head.html", { "title":"Обо мне"})
 	<body>
-		<header class="header" id="header">
-			@@include("./templates/layout/header/_header.html")
-		</header>
+		<header class="header" id="header">@@include("./templates/layout/header/_header.html")</header>
 		<!-- /#header.header -->
 
 		<main class="main">
@@ -12,13 +10,21 @@
 				<h1>About</h1>
 				<br />
 				<a href="index.html">Index</a>
+				<br /><br />
+				<svg class="icon">
+					<use xlink:href="images/sprite.svg#apps"></use>
+				</svg>
+				<svg class="icon">
+					<use xlink:href="images/sprite.svg#back-to-top"></use>
+				</svg>
+				<svg class="icon">
+					<use xlink:href="images/sprite.svg#close"></use>
+				</svg>
 			</div>
 		</main>
 		<!-- /.main -->
 
-		<footer class="footer">
-			@@include("./templates/layout/footer/_footer.html")
-		</footer>
+		<footer class="footer">@@include("./templates/layout/footer/_footer.html")</footer>
 		<!-- /.footer -->
 	</body>
 </html>
