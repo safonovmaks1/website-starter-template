@@ -8,7 +8,13 @@
 
 	"media query": {
 		"prefix": "mq",
-		"body": ["@include mq($1) {$2}"],
+		"body": ["@include breakpoint($1) {$2}"],
+		"description": "media query"
+	},
+
+	"media query down": {
+		"prefix": "mqd",
+		"body": ["@include breakpoint-down($1) {$2}"],
 		"description": "media query"
 	}
 }

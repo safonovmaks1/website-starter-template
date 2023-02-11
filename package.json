@@ -29,6 +29,7 @@
 		"start": "gulp",
 		"build": "gulp --production",
 		"clean": "gulp reset",
+		"seo": "gulp seo",
 		"zip": "gulp deployZip --production",
 		"deploy": "gulp deployFtp --production",
 		"del": "rm -rf node_modules build"

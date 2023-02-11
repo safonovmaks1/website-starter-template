@@ -1,10 +1,5 @@
 // This file contains all application-wide Sass functions.
-
 @use 'sass:math';
-
-// @function rem($px) {
-// 	@return ($px / 16) + rem;
-// }
 
 @function em($px, $metric: 'em', $base-font-size: 16px) {
 	@if unitless($px) {

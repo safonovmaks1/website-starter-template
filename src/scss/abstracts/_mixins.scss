@@ -1,20 +1,16 @@
-// This file contains all application-wide Sass mixins.
+@use '../utils' as *;
 
-@use 'sass:map';
-@use 'breakpoints' as *;
-
-@mixin mq($key) {
-	$size: map.get($breakpoints, $key);
-
-	// mobile first
-	@media screen and (min-width: $size) {
+// Mediaqueris
+@mixin breakpoint($size) {
+	@media (min-width: map-get($breakpoints-up, $size)) {
 		@content;
 	}
+}
 
-	// desktop first
-	// @media screen and (max-width: $size) {
-	// 	@content;
-	// }
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
 }
 
 // Fonts
@@ -28,36 +24,6 @@
 		// url('../fonts/#{$file-name}.woff') format('woff');
 		font-display: swap;
 	}
-}
-
-// Adaptive font
-$max-width: 1140;
-
-@mixin adaptiv-font($pc-size, $mob-size) {
-	$add-size: $pc-size - $mob-size;
-	$max-width: $max-width - 320;
-
-	font-size: calc(#{$mob-size + px} + #{$add-size} * ((100vw - 320px) / #{$max-width}));
-}
-
-// Center block
-@mixin abs-center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-
-	transform: translate(-50%, -50%);
-}
-
-@mixin flex-center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-@mixin grid-center {
-	display: grid;
-	place-items: center;
 }
 
 // Size
@@ -130,49 +96,5 @@ $max-width: 1140;
 		background: $color-bg;
 
 		content: '';
-	}
-}
-
-// Reset
-@mixin btn-reset {
-	margin: 0;
-	padding: 0;
-
-	background-color: transparent;
-	border: 0;
-	border-radius: 0;
-	outline: 0;
-	cursor: pointer;
-
-	appearance: none;
-}
-
-@mixin list-reset {
-	margin: 0;
-	padding: 0;
-
-	list-style: none;
-}
-
-// Buttons
-@mixin btn-anim($scaleMax: 1.01, $scaleMin: 0.95) {
-	transform-origin: 50% 50% 0;
-
-	transition: all ease-out 240ms;
-
-	&:hover {
-		transform: scale(#{$scaleMax});
-	}
-
-	&:focus {
-		outline: transparent;
-	}
-
-	&:focus-visible {
-		transform: scale(#{$scaleMax}) translateY(-5%);
-	}
-
-	&:active {
-		transform: scale(#{$scaleMin});
 	}
 }

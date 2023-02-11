@@ -23,7 +23,7 @@ import { zip } from './gulp/tasks/zip.js';
 import { ftp } from './gulp/tasks/ftp.js';
 
 // Public Tasks
-export { reset };
+export { reset, seo };
 
 // Static Server
 const server = () => {
@@ -59,7 +59,7 @@ export { deployZip };
 const deployFtp = gulp.series(reset, tasks, ftp);
 export { deployFtp };
 
-const build = gulp.series(reset, tasks, seo);
+const build = gulp.series(reset, tasks);
 
 const dev = gulp.series(build, fontsStyle, gulp.parallel(server, watcher));
 

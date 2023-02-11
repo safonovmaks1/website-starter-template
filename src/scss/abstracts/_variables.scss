@@ -1,1 +1,89 @@
-$body-color: rgb(172 249 128);
+// This file contains all Scss Project Variables.
+
+// Fonts
+@use '../fonts';
+
+:root {
+	--header-height: 3rem;
+	--fs-base: 16px;
+
+	// Colors
+	--first-color: #ffa501;
+	--second-color: #75a4ea;
+	--accent-color: #004dff;
+
+	// Text Colors
+	--title-color: #202020;
+	--text-color: #202020;
+	--text-color-light: #dcdcdc;
+
+	// Background colors
+	--body-color: #fff;
+	--container-color: #fff;
+
+	// Validate colors
+	--color-valid: #15dea5;
+	--color-invalid: #db464b;
+
+	// shadows
+	--shadow: 0 0 0.5em rgba(0 0 0 / 25%);
+
+	// Fonts
+	--ff-primary: 'Poppins', sans-serif;
+	--ff-secondary: 'Montserrat', sans-serif;
+	--ff-body: var(--ff-primary);
+	--ff-heading: var(--ff-secondary);
+
+	// Font weight
+	--fw-thin: 100;
+	--fw-extra-light: 200;
+	--fw-light: 300;
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-semi-bold: 600;
+	--fw-bold: 700;
+	--fw-extra-bold: 800;
+	--fw-black: 900;
+
+	// Font sizes
+	// .5rem = 8px, 1rem = 16px, 1.5rem = 24px ...
+	--big-font-size: 2rem;
+	--h1-font-size: 1.5rem;
+	--h2-font-size: 1.25rem;
+	--h3-font-size: 1.125rem;
+	--normal-font-size: 0.938rem;
+	--small-font-size: 0.813rem;
+	--smaller-font-size: 0.75rem;
+
+	// Responsive typography
+	@media screen and (min-width: 48em) {
+		--big-font-size: 3rem;
+		--h1-font-size: 2.25rem;
+		--h2-font-size: 1.5rem;
+		--h3-font-size: 1.25rem;
+		--normal-font-size: 1rem;
+		--small-font-size: 0.875rem;
+		--smaller-font-size: 0.813rem;
+	}
+
+	// Margenes Bottom
+	// .25rem = 4px, .5rem = 8px, .75rem = 12px ...
+	--mb-0-25: 0.25rem;
+	--mb-0-5: 0.5rem;
+	--mb-0-75: 0.75rem;
+	--mb-1: 1rem;
+	--mb-1-5: 1.5rem;
+	--mb-2: 2rem;
+	--mb-2-5: 2.5rem;
+	--mb-3: 3rem;
+
+	// z index
+	--z-back: -10;
+	--z-normal: 1;
+	--z-tooltip: 10;
+	--z-fixed: 100;
+	--z-modal: 1000;
+
+	// transitions
+	--transition-time: all 0.3s ease-out 0s;
+}

@@ -1,0 +1,18 @@
+@use '../abstracts/mixins' as *;
+
+body {
+	margin: var(--header-height) 0 0 0;
+
+	color: var(--text-color);
+	font-weight: var(--fw-regular);
+	font-size: var(--fs-base);
+	font-family: var(--ff-body);
+
+	background-color: var(--body-color);
+
+	transition: var(--transition-time);
+
+	@include breakpoint(medium) {
+		margin: 0;
+	}
+}

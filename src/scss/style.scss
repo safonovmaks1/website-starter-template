@@ -1,31 +1,31 @@
-@use 'fonts';
-@use 'abstracts/mixins' as *;
-@use 'abstracts/variables' as *;
+// Global stylesheet where we will @use all other stylesheets
+// ----------------------------------------
+//  Table of contents
+// --- Variables
+// --- Vendor imports
+// --- Base imports
+// --- Component imports
+// --- Layout imports
+
+@charset 'UTF-8';
+
+// Variables
+@use 'abstracts/variables';
+
+// Vendor imports
+// @use 'swiper/swiper';
+// @use 'swiper/modules/navigation/navigation';
+// @use 'swiper/modules/pagination/pagination';
+
+// Base
+@use 'base';
+
+// Components
+@use 'components';
+
+// Layouts
+@use 'layout';
 
 body {
-	color: papayawhip;
-	font-weight: 400;
-	font-size: 16px;
-	font-family: 'Poppins', system-ui, sans-serif;
-	line-height: 1.2;
-
-	background-color: $body-color;
-
-	@include mq(small) {
-		background-color: khaki;
-	}
-
-	@include mq(medium) {
-		background-color: skyblue;
-	}
-
-	@include mq(large) {
-		color: dimgray;
-
-		background-color: violet;
-	}
-}
-
-.icon {
-	@include size(2rem);
+	text-align: center;
 }
