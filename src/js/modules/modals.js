@@ -1,10 +1,4 @@
-export function modalController({
-	modal,
-	btnOpen,
-	btnClose,
-	time = 300,
-	closeClickOverlay = true,
-}) {
+export function modalController({ modal, btnOpen, btnClose, time = 300, closeClickOverlay = true }) {
 	const buttonElems = document.querySelectorAll(btnOpen);
 	const modalElem = document.querySelector(modal);
 
@@ -55,8 +49,8 @@ export function modalController({
 	modalElem.addEventListener('click', closeModal);
 }
 // modals.modalController({
-// 	modal: '.modal2',
-// 	btnOpen: '.test2',
+// 	modal: '.modal',
+// 	btnOpen: '.test',
 // 	btnClose: '.modal__close',
 // 	time: 500,
 // });
