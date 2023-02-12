@@ -2,7 +2,11 @@
 <html lang="ru">
 	@@include("./templates/config/_head.html", { "title":"Главная"})
 	<body>
-		<header class="header" id="header">@@include("./templates/layout/header/_header.html")</header>
+		<header class="header" id="header">
+			@@include("./templates/layout/header/_header.html")
+			<!-- Scroll Indicator -->
+			@@include("./templates/components/_scrollIndicator.html")
+		</header>
 		<!-- /#header.header -->
 
 		<main class="main">
@@ -15,10 +19,13 @@
 				<br />
 				<img src="images/test.jpeg" alt="" width="400" />
 			</div>
+			<section class="section section-1"></section>
 		</main>
 		<!-- /.main -->
 
 		<footer class="footer">@@include("./templates/layout/footer/_footer.html")</footer>
 		<!-- /.footer -->
+		<!-- Scroll UP -->
+		@@include("./templates/components/_scrollup.html")
 	</body>
 </html>
